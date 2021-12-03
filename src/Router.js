@@ -10,10 +10,18 @@ export default function Router() {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="CategoriesPage" component={Categories} />
-        <Stack.Screen name="MealsPage" component={Meals} />
-        <Stack.Screen name="DetailsPage" component={Details} />
+      <Stack.Navigator
+        screenOptions={{
+          headerTintColor: "#4caf50",
+          headerTitleAlign: "center",
+          headerTitleStyle: {
+            fontWeight: "bold",
+            fontSize: 25,
+          },
+        }}>
+        <Stack.Screen name="Categories" component={Categories} />
+        <Stack.Screen name="Meals" component={Meals} />
+        <Stack.Screen name="Details" component={Details} />
       </Stack.Navigator>
     </NavigationContainer>
   );
