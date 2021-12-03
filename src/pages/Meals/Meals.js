@@ -4,6 +4,7 @@ import { Text, FlatList, StyleSheet, SafeAreaView } from "react-native";
 import useFetch from "../../hooks/useFetch";
 import Config from "react-native-config";
 import MealCard from "../../components/Cards/MealCard";
+import Loading from "../../components/Loading/Loading";
 
 export default function Meals() {
   const router = useRoute();
@@ -12,7 +13,7 @@ export default function Meals() {
   const { data, loading, error } = useFetch(url);
 
   if (loading) {
-    return <Text>Loading...</Text>;
+    return <Loading />;
   }
 
   if (error) {

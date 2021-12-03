@@ -2,6 +2,7 @@ import React from "react";
 import { FlatList, SafeAreaView, StyleSheet, Text } from "react-native";
 import Config from "react-native-config";
 import CategoryCard from "../../components/Cards/CategoryCard";
+import Loading from "../../components/Loading/Loading";
 import useFetch from "../../hooks/useFetch";
 
 export default function Categories() {
@@ -9,7 +10,7 @@ export default function Categories() {
   const { data, loading, error } = useFetch(url);
 
   if (loading) {
-    return <Text>Loading...</Text>;
+    return <Loading />;
   }
 
   if (error) {
