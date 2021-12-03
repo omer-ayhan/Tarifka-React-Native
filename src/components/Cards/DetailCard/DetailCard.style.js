@@ -9,12 +9,12 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 31,
-    color: "#c62828",
+    color: "#b71c1c",
     fontWeight: "bold",
   },
   area: {
     fontSize: 23,
-    color: "#c62828",
+    color: "#b71c1c",
     fontWeight: "500",
   },
   instructions: {
