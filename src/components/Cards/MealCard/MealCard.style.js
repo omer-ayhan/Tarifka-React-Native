@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
     padding: 8,
     backgroundColor: "rgba(0, 0, 0, 0.6)",
     color: "#fff",
-    fontSize: 33,
+    fontSize: 31,
     fontWeight: "bold",
     textAlign: "right",
   },
