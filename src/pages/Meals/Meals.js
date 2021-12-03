@@ -1,6 +1,6 @@
 import { useRoute } from "@react-navigation/core";
 import React from "react";
-import { View, Text, FlatList } from "react-native";
+import { Text, FlatList, StyleSheet, SafeAreaView } from "react-native";
 import useFetch from "../../hooks/useFetch";
 import Config from "react-native-config";
 import MealCard from "../../components/Cards/MealCard";
@@ -21,5 +21,16 @@ export default function Meals() {
 
   const renderMeals = ({ item }) => <MealCard mealData={item} />;
 
-  return <FlatList data={data.meals} renderItem={renderMeals} />;
+  return (
+    <SafeAreaView style={styles.container}>
+      <FlatList data={data.meals} renderItem={renderMeals} />
+    </SafeAreaView>
+  );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: "#4caf50",
+    flex: 1,
+  },
+});
