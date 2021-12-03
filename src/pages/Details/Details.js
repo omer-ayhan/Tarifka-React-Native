@@ -5,6 +5,7 @@ import useFetch from "../../hooks/useFetch";
 import Config from "react-native-config";
 import DetailCard from "../../components/Cards/DetailCard";
 import Loading from "../../components/Loading/Loading";
+import Error from "../../components/Error";
 
 export default function Details() {
   const router = useRoute();
@@ -15,9 +16,8 @@ export default function Details() {
     return <Loading />;
   }
   if (error) {
-    return <Text>{error}</Text>;
+    return <Error message={error} />;
   }
-
   const renderDetails = ({ item }) => <DetailCard detailData={item} />;
   const extractId = ({ idMeal }) => idMeal;
 

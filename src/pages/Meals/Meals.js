@@ -5,6 +5,7 @@ import useFetch from "../../hooks/useFetch";
 import Config from "react-native-config";
 import MealCard from "../../components/Cards/MealCard";
 import Loading from "../../components/Loading/Loading";
+import Error from "../../components/Error";
 
 export default function Meals() {
   const router = useRoute();
@@ -17,7 +18,7 @@ export default function Meals() {
   }
 
   if (error) {
-    return <Text>{error}</Text>;
+    return <Error message={error} />;
   }
 
   const renderMeals = ({ item }) => <MealCard mealData={item} />;

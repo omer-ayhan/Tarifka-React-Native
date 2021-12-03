@@ -2,7 +2,8 @@ import React from "react";
 import { FlatList, SafeAreaView, StyleSheet, Text } from "react-native";
 import Config from "react-native-config";
 import CategoryCard from "../../components/Cards/CategoryCard";
-import Loading from "../../components/Loading/Loading";
+import Error from "../../components/Error";
+import Loading from "../../components/Loading";
 import useFetch from "../../hooks/useFetch";
 
 export default function Categories() {
@@ -14,7 +15,7 @@ export default function Categories() {
   }
 
   if (error) {
-    return <Text>{error}</Text>;
+    return <Error message={error} />;
   }
 
   const renderCategories = ({ item }) => <CategoryCard categoryData={item} />;
