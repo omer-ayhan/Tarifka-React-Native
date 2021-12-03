@@ -20,10 +20,15 @@ export default function Meals() {
   }
 
   const renderMeals = ({ item }) => <MealCard mealData={item} />;
+  const extractId = ({ idMeal }) => idMeal;
 
   return (
     <SafeAreaView style={styles.container}>
-      <FlatList data={data.meals} renderItem={renderMeals} />
+      <FlatList
+        data={data.meals}
+        renderItem={renderMeals}
+        keyExtractor={extractId}
+      />
     </SafeAreaView>
   );
 }
