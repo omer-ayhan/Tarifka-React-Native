@@ -1,5 +1,5 @@
 import { useNavigation } from "@react-navigation/core";
-import React from "react";
+import React, { memo } from "react";
 import {
   View,
   Text,
@@ -8,7 +8,7 @@ import {
 } from "react-native";
 import styles from "./MealCard.style";
 
-export default function MealCard({ mealData }) {
+function MealCard({ mealData }) {
   const navigation = useNavigation();
   const { strMeal, strMealThumb, idMeal } = mealData;
   const image = { uri: strMealThumb };
@@ -28,3 +28,4 @@ export default function MealCard({ mealData }) {
     </TouchableWithoutFeedback>
   );
 }
+export default memo(MealCard);

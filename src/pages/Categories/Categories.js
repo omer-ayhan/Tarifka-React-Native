@@ -1,5 +1,5 @@
 import React from "react";
-import { FlatList, SafeAreaView, StyleSheet, Text } from "react-native";
+import { FlatList, SafeAreaView, StyleSheet } from "react-native";
 import Config from "react-native-config";
 import CategoryCard from "../../components/Cards/CategoryCard";
 import Error from "../../components/Error";

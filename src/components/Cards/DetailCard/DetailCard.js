@@ -1,9 +1,9 @@
-import React from "react";
+import React, { memo } from "react";
 import { View, Text, Image } from "react-native";
 import LinkButton from "../../LinkButton";
 import styles from "./DetailCard.style";
 
-export default function DetailCard({ detailData }) {
+function DetailCard({ detailData }) {
   const { strMeal, strArea, strInstructions, strMealThumb, strYoutube } =
     detailData;
   const image = { uri: strMealThumb };
@@ -20,3 +20,4 @@ export default function DetailCard({ detailData }) {
     </View>
   );
 }
+export default memo(DetailCard);

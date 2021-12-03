@@ -1,8 +1,8 @@
-import React, { useCallback } from "react";
+import React, { memo, useCallback } from "react";
 import { Alert, Linking, Text, TouchableOpacity } from "react-native";
 import styles from "./LinkButton.style";
 
-export default function LinkButton({ href, title }) {
+function LinkButton({ href, title }) {
   const handlePress = useCallback(async () => {
     const supported = await Linking.canOpenURL(href);
     if (supported) {
@@ -18,3 +18,4 @@ export default function LinkButton({ href, title }) {
     </TouchableOpacity>
   );
 }
+export default memo(LinkButton);

@@ -1,6 +1,6 @@
-import { useRoute } from "@react-navigation/core";
 import React from "react";
-import { Text, FlatList, StyleSheet, SafeAreaView } from "react-native";
+import { useRoute } from "@react-navigation/core";
+import { FlatList, StyleSheet, SafeAreaView } from "react-native";
 import useFetch from "../../hooks/useFetch";
 import Config from "react-native-config";
 import MealCard from "../../components/Cards/MealCard";
@@ -9,7 +9,6 @@ import Error from "../../components/Error";
 
 export default function Meals() {
   const router = useRoute();
-
   const url = `${Config.API_URL}/filter.php?c=${router.params.category}`;
   const { data, loading, error } = useFetch(url);
 

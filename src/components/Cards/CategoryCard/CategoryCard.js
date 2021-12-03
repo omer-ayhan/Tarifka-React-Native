@@ -1,9 +1,9 @@
-import React from "react";
+import React, { memo } from "react";
 import { useNavigation } from "@react-navigation/core";
 import { View, Text, Image, TouchableWithoutFeedback } from "react-native";
 import styles from "./CategoryCard.style";
 
-export default function CategoryCard({ categoryData }) {
+function CategoryCard({ categoryData }) {
   const navigation = useNavigation();
 
   const { strCategoryThumb, strCategory } = categoryData;
@@ -19,3 +19,5 @@ export default function CategoryCard({ categoryData }) {
     </TouchableWithoutFeedback>
   );
 }
+
+export default memo(CategoryCard);

@@ -1,6 +1,6 @@
 import React from "react";
 import { useRoute } from "@react-navigation/core";
-import { Text, FlatList } from "react-native";
+import { FlatList } from "react-native";
 import useFetch from "../../hooks/useFetch";
 import Config from "react-native-config";
 import DetailCard from "../../components/Cards/DetailCard";
