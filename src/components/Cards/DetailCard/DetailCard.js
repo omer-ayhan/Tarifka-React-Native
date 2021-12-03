@@ -1,9 +1,11 @@
 import React from "react";
 import { View, Text, Image } from "react-native";
+import LinkButton from "../../LinkButton";
 import styles from "./DetailCard.style";
 
 export default function DetailCard({ detailData }) {
-  const { strMeal, strArea, strInstructions, strMealThumb } = detailData;
+  const { strMeal, strArea, strInstructions, strMealThumb, strYoutube } =
+    detailData;
   const image = { uri: strMealThumb };
   return (
     <View>
@@ -14,6 +16,7 @@ export default function DetailCard({ detailData }) {
       </View>
       <View style={styles.divider}></View>
       <Text style={styles.instructions}>{strInstructions}</Text>
+      <LinkButton href={strYoutube} title="Watch on YouTube" />
     </View>
   );
 }
